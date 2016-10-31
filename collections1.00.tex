@@ -1,0 +1,178 @@
+\documentclass[color=green,mathpazo,titlestyle=hang]{elegantbook}
+
+\author{Huyi Chen}
+\email{hooyuser@outlook.com}
+\zhtitle{数学}
+\zhend{收集箱}
+
+\entitle{Collections}
+\enend{Of Math}
+\version{1.00}
+\myquote{If people do not believe that mathematics is simple,\\ 
+	it is only because they do not realize how complicated life is.}
+\logo{box.pdf}
+\cover{grass.pdf}
+  
+%green color
+   \definecolor{main1}{RGB}{0,120,2}
+   \definecolor{seco1}{RGB}{230,90,7}
+   \definecolor{thid1}{RGB}{0,160,152}
+%cyan color
+   \definecolor{main2}{RGB}{0,175,152}
+   \definecolor{seco2}{RGB}{239,126,30}
+   \definecolor{thid2}{RGB}{120,8,13}
+%blue color
+   \definecolor{main3}{RGB}{20,50,104}
+   \definecolor{seco3}{RGB}{180,50,131}
+   \definecolor{thid3}{RGB}{7,127,128}
+
+\usepackage{makecell}
+\usepackage{lipsum}
+\usepackage{texnames} 
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\mainmatter
+
+\chapter{数论}
+
+\section{中国剩余定理}
+
+\subsection{历史}
+《孙子算经》是中国南北朝时期（公元5世纪）的数学著作\cite{sunzi}. 其卷下第二十六题，叫做“物不知数”问题，原文如下：\\ 
+
+\emph{有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？}\\ 
+
+
+即，一个整数除以三余二，除以五余三，除以七余二，求这个整数.《孙子算经》中首次提到了同余方程组问题，并给出了以上具体问题的解法，因此在中文数学文献中中国剩余定理也会被称为孙子定理.
+
+
+
+\subsection{定理陈述}
+  中国剩余定理有三种常见的表述方式，将在下面一一给出.
+  第一种是以余数的形式.我们首先引入带余除法的概念.
+  
+  
+\begin{newprop}[带余除法]
+  设$a\in \mathbb{Z}$，$b\in \mathbb{N^+}$.	一定存在唯一的整数对$(q,r)$，使$a=bq+r$，且$0\leq r< b$.其中$b=\left[\dfrac{a}{b}\right]$称作$a$除以$b$的不完全商，$r=a-b\left[\dfrac{a}{b}\right]$称作$a$除以$b$的余数，$r$也常常被记作$a\bmod b$.
+\end{newprop} 
+
+  命题的证明是平凡的,这里略去.在下面定理的叙述中，我们总是假定$n_1,n_2,\cdots,n_k$是大于1的整数，而$n_i$常常称作模. 同时，我们记$N=n_1n_2\cdots n_k$为所有模的积. 现在给出中国剩余定理的第一种表述.
+  
+  
+  \begin{newthem}[中国剩余定理I]
+  	如果$n_i$两两互素,且整数$r_i$满足$0\leq r< n_i$,则存在唯一满足$0\leq x <N$的整数$x$，使得对每一个$i(1\leq i \leq k)$,都有$x\bmod n_i=r_i$.
+  \end{newthem}
+
+  上述表述是《孙子算经》中具体问题的一般化描述，但却不够清晰. 若引入同余记号，这个问题实际上就变成如何去求解一个一元一次同余方程组，这也是中国剩余定理的第二种表述.
+  
+  \begin{newthem}[中国剩余定理II]
+  	如果$n_1,n_2,\cdots,n_k$两两互素，且$r_1,r_2,\cdots,r_k \in \mathbb{Z}$，则同余方程组
+  
+  	\begin{equation*}
+  	\left\{                          
+  	\begin{aligned}
+  	x&\equiv r_1\pmod{n_1}\\
+  	x&\equiv r_2\pmod{n_2}\\
+  	 &\qquad \vdots\\ 
+  	x&\equiv r_k\pmod{n_k}\\
+  	\end{aligned}
+  	\right.
+  	\end{equation*}
+  有无穷多解，且任意两个解模$N$同余.	
+  
+  \end{newthem}
+
+
+  \begin{newproof}
+	先证存在性. 记除了$N_i$外所有模的乘积为$N_i=\dfrac{N}{n_i}$.因为$n_i$两两互素,故$N_i$也与$n_i$互素.由B\'{e}zout等式，存在整数$M_i,m_i$，使得
+	\[
+	M_iN_i+m_in_i=1.
+	\]
+	因此
+	\[
+	N_iM_i\equiv 1\pmod{n_i}.
+	\]
+	记$M_i=N_i^{-1}$为$N_i$的数论倒数，则x可以构造为$\sum\limits_{i=1}^{k}r_iN_i N_i^{-1}$.事实上，只要注意到$j\ne i$时$n_j|N_i$，于是有
+	\[
+	x\equiv \sum_{i=1}^{k}r_iN_i N_i^{-1}\equiv r_iN_i N_i^{-1}\equiv r_i\pmod{n_i}.
+	\]
+	再证唯一性.若$y$也是一个解，则$x\equiv y\equiv r_i\pmod{n_i}$. 又因为$n_i$两两互素，故$x\equiv y\pmod{N}$.
+	综上可得，同余方程组的通解是
+	\[
+		x=\sum_{i=1}^{k}r_iN_i N_i^{-1}+N.
+	\]
+  \end{newproof}
+
+
+  因为模$n_i$的剩余类构成一个环$\mathbb{Z}_{n_i}=\mathbb{Z}/n_i\mathbb{Z}$，运用抽象代数的语言，中国剩余定理可以描述成一个环同构. 在这之前，我们有必要先明确环的直积的定义.
+
+  \newpage
+
+\begin{newdef}[环的直积]
+	给定两个环$(G,\emph{+},\ast)$和$(H,\oplus,\odot)$，它们的直积仍是一个环$(G\times H,+,\cdot)$，其中集合$G\times H=\{(g,h)|g\in G, h\in H\}$是$G$与$H$的笛卡儿积；环上的运算$+,\cdot$定义为
+	\begin{itemize}
+		\parskip=0pt \itemsep=0pt
+		\item $(g_1,h_1)+(g_2,h_2)=(g_1\emph{+}g_2,h_1\oplus h_2)$
+		\item $(g_1,h_1)\cdot(g_2,h_2)=(g_1\ast g_2,h_1\odot h_2)$
+	\end{itemize}
+	在不会引起误解的情形下，环$(G\times H,\emph{+},\ast)$可简记$G\times H$,其乘法单位元为$(1_G,1_H)$. 类似地，对于可数个环，我们也可通过这种分量加法和分量乘法的方式，定义$\{R_i\}_{i\in I}$的直积$\prod\limits_{i\in I}R_i$.
+\end{newdef}
+
+
+  有了环的直积这一个概念后，就可以正式介绍定理的第三种表述了.
+
+  
+  \begin{newthem}[中国剩余定理III]
+  	若$n_1n_2\cdots n_k$两两互素，则映射
+  	\[
+  	\varphi:(x\bmod n_1,x\bmod n_2,\cdots,x\bmod n_k)\mapsto x\bmod N
+  	\]
+  	确定一个环同构
+  	\[
+  	\varphi:\mathbb{Z}/n_1\mathbb{Z}\times\mathbb{Z}/n_2\mathbb{Z}\times\cdots\times\mathbb{Z}/n_k\mathbb{Z}\rightarrow\mathbb{Z}/N\mathbb{Z}.
+  	\]
+  
+
+  \end{newthem}
+
+
+  \begin{newproof}
+	在下面的证明中为了书写简便，对于模$m$剩余类$\bar{x}=x+m\mathbb{Z}=\{x+km|k\in\mathbb{Z}\}\in \mathbb{Z}/m\mathbb{Z}$，我们将它与剩余类的代表元$x$不做区分. 首先证明$\varphi$是一个双射.事实上，如果
+	\[
+	\varphi(r_1,r_2,\cdots,r_k)=\varphi(r_1^{'},r_2^{'},\cdots,r_k^{'})=R,
+	\]
+	则有$r_i\equiv r_i^{'}\equiv R \pmod{n_i} $，或$(r_1,r_2,\cdots,r_k)=(r_1^{'},r_2^{'},\cdots,r_k^{'}).$这说明$\varphi$是单射.
+	又注意到基数$\left|\mathbb{Z}/n_1\mathbb{Z}\times\mathbb{Z}/n_2\mathbb{Z}\times\cdots\times\mathbb{Z}/n_k\mathbb{Z}\right|=\left|\mathbb{Z}/N\mathbb{Z}\right|=N$,所以$\varphi$一定是双射.
+	此外，我们还需验证双射$\varphi$保持运算。根据环的直积的定义，我们有
+	
+	\begin{equation*}	
+	\begin{aligned}
+	\varphi(a_1,a_2,\cdots,a_k)+\varphi(b_1,b_2,\cdots,b_k)	
+	&=\sum_{i=1}^{k}a_iN_i N_i^{-1}+\sum_{i=1}^{k}b_iN_i N_i^{-1}=\sum_{i=1}^{k}(a_i+b_i)N_i N_i^{-1}\\
+	&=\varphi(a_1+b_1,a_2+b_2,\cdots,a_k+b_k)\\
+	&=\varphi[(a_1,a_2,\cdots,a_k)+(b_1,b_2,\cdots,b_k)].
+	\end{aligned}		
+	\end{equation*}
+	
+	\begin{equation*}	
+	\begin{aligned}
+	\varphi(a_1,a_2,\cdots,a_k)\cdot\varphi(b_1,b_2,\cdots,b_k)	
+	&=\left(\sum_{i=1}^{k}a_iN_i N_i^{-1}\right)\cdot\left(\sum_{i=1}^{k}b_iN_i N_i^{-1}\right)\\
+	&=\sum_{i=1}^{k}a_i b_i (N_i N_i^{-1})^2+\sum_{i\ne j}a_iN_i N_i^{-1}b_jN_j N_j^{-1}\\
+	&=\sum_{i=1}^{k}a_i b_i N_i N_i^{-1}\\
+	&=\varphi(a_1\cdot b_1,a_2\cdot b_2,\cdots,a_k\cdot b_k)\\
+	&=\varphi[(a_1,a_2,\cdots,a_k)\cdot(b_1,b_2,\cdots,b_k)].
+	\end{aligned}		
+	\end{equation*}  
+    这就证明了$\varphi$是$\mathbb{Z}/n_1\mathbb{Z}\times\mathbb{Z}/n_2\mathbb{Z}\times\cdots\times\mathbb{Z}/n_k\mathbb{Z}$到$\mathbb{Z}/N\mathbb{Z}$上的环同构.
+
+  \end{newproof}
+
+\bibliographystyle{ieeetr}
+\bibliography{reference}
+\addcontentsline{toc}{chapter}{参考文献} 
+
+\end{document}
