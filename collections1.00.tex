@@ -1,3 +1,4 @@
+
 \documentclass[color=green,mathpazo,titlestyle=hang]{elegantbook}
 
 \author{Huyi Chen}
@@ -29,6 +30,8 @@
 \usepackage{makecell}
 \usepackage{lipsum}
 \usepackage{texnames} 
+\usepackage{amssymb}
+\usepackage[all]{xy}
 
 
 \begin{document}
@@ -40,7 +43,7 @@
 
 \section{中国剩余定理}
 
-\subsection{历史}
+\subsection{历史背景}
 《孙子算经》是中国南北朝时期（公元5世纪）的数学著作\cite{szsj}. 其卷下第二十六题，叫做“物不知数”问题，原文如下:\\ 
 
 \emph{有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？}\\ 
@@ -99,7 +102,7 @@
 
 
   \begin{newproof}
-	先证存在性. 记除了$N_i$外所有模的乘积为$N_i=\dfrac{N}{n_i}$.因为$n_i$两两互素,故$N_i$也与$n_i$互素.由B\'{e}zout等式，存在整数$M_i,m_i$，使得
+	先证存在性. 记除了$n_i$外所有模的乘积为$N_i=\dfrac{N}{n_i}$.因为$n_i$两两互素,故$N_i$也与$n_i$互素.由B\'{e}zout等式，存在整数$M_i,m_i$，使得
 	\[
 	M_iN_i+m_in_i=1.
 	\]
@@ -107,14 +110,14 @@
 	\[
 	N_iM_i\equiv 1\pmod{n_i}.
 	\]
-	记$M_i=N_i^{-1}$为$N_i$的数论倒数，则x可以构造为$\sum\limits_{i=1}^{k}r_iN_i N_i^{-1}$.事实上，只要注意到$j\ne i$时$n_j|N_i$，于是有
+	记$M_i=N_i^{-1}$为$N_i$的数论倒数，则x可以构造为$\sum\limits_{i=1}^{k}r_iN_i N_i^{-1}$.事实上，只要注意到$j\ne i$时$n_i|N_j$，于是有
 	\[
-	x\equiv \sum_{i=1}^{k}r_iN_i N_i^{-1}\equiv r_iN_i N_i^{-1}\equiv r_i\pmod{n_i}.
+	x\equiv \sum_{i=1}^{k}r_iN_{i} N_i^{-1}\equiv r_iN_i N_i^{-1}\equiv r_i\pmod{n_i}.
 	\]
 	再证唯一性.若$y$也是一个解，则$x\equiv y\equiv r_i\pmod{n_i}$. 又因为$n_i$两两互素，由算术基本定理知$x\equiv y\pmod{N}$.
 	综上可得，同余方程组的通解是
 	\[
-		x=\sum_{i=1}^{k}r_iN_i N_i^{-1}+N.
+		x=\sum_{i=1}^{k}r_iN_i N_i^{-1}+mN \quad (m\in\mathbb{Z}).
 	\]
   \end{newproof}
 
@@ -183,7 +186,109 @@
 
   \end{newproof}
 
-  在环同构的看法下，我们可以将定理自然地推广到一般的PID（主理想整环）上.  这是因为证明中用到的B\'{e}zout等式有对应的推广，而算术基本定理（唯一分解定理）在更一般的UFD（唯一分解整环）上也成立. 如果用互素理想代替
+  从环同构的观点出发，我们可以将定理自然地推广到一般的PID（主理想整环）上，这时$R$模掉极大理想$I$得到的的商环$R/I$代替了原先的剩余类环$\mathbb{Z}/m\mathbb{Z}$. 原因是证明中用到的B\'{e}zout等式在PID上有对应的推广，而算术基本定理（唯一分解定理）在更一般的UFD（唯一分解整环）上也成立. 进一步地，通过定义互素理想，我们还可以将定理推广到任意环上.
+
+\chapter{代数}
+\section{基础概念}
+
+\subsection{等价关系}
+
+\begin{newdef}[二元关系]
+	设$X,Y$是任意两个集合，其任意子集$\mathcal{R}\in X\times Y$叫做$X$与$Y$之间的一个\textbf{二元关系}.若$X=Y$,则简称为$X$上的一个二元关系.	
+\end{newdef}
+有序对$(x,y)\in\mathcal{R}$可简记为$x\mathcal{R} y$.
+
+\begin{newdef}[等价关系]
+	集合$X$上的二元关系$\sim$叫作\textbf{等价关系}，如果任取$x,x',x''\in X$，满足:
+	\begin{enumerate}
+		\item 反身性：$x\sim x$；
+		\item 对称性：$x\sim x'\implies x'\sim x$；
+		\item 传递性：$x\sim x'$且$x'\sim x''\implies x\sim x''$.
+	\end{enumerate}
+\end{newdef}
+
+
+元素$a,b\in X$不具有等价关系记作$a\not\sim b$.
+
+\begin{newdef}[等价类]
+	在集合$X$中，与给定元素$x$等价的所有元素的集合，叫作包含$x$的\textbf{等价类}，记为
+	\[\overline{x}:=\{x'\in X|x'\sim x\}\subset X.\]
+	任意元素$x'\in\overline{x}$叫作$\overline{x}$的\textbf{代表元}.
+\end{newdef}
+
+
+我们将在下述两个对偶的命题中看到，等价关系与集合的分类有着密切的联系.
+
+先叙述一下记号. 集合$X$的所有子集组成的集合称为$X$的\textbf{幂集}，记作
+\[\mathcal{P}(X):=\bigcup_{S\subset X} S.\]
+如果集合$X$能够表示成其若干非空子集的不交并，那么这些称这些子集的集合为$X$的一个\textbf{划分}，并记作$\pi(X)$.
+
+
+\begin{newprop}
+	由关系$\sim$确定的所有等价类的集合是集合$X$的一个划分，即$X$是这些等价类的不交并，记作
+	\[\pi_{\sim}(X)=\{\overline{x}\in \mathcal{P}(X)|x\in X\}.\]
+\end{newprop}
+
+
+\begin{newproof}
+	注意到$x\in \overline{x}$，因此$\bigcup_{x\in X}\overline{x}=X$. 如果存在两个不同的等价类$\overline{x_1},\overline{x_2}$，使得$\overline{x_1}\bigcap\overline{x_2}=x'$,那么有$x'\sim x_1$和$x'\sim x_2$. 由等价关系的传递性知$x_1\sim x_2$,即$\overline{x_1}=\overline{x_2}$，矛盾！故对任意两个不同的等价类$\overline{x_1},\overline{x_2}$，都有$\overline{x_1}\bigcap\overline{x_2}=\varnothing.$
+\end{newproof}
+
+
+\begin{newprop}
+	如果$\pi(X)$是将集合$X$分成不相交子集$C_t$的一个划分，则$C_t$是由某一等价关系$\sim$确定的等价类.
+\end{newprop}
+
+
+\begin{newproof}
+	设集合$X=\bigcup_{C_t\in\pi(X)}C_t$. 根据划分的定义，每个元素$x\in X$仅被包含在一个子集$C_a$中. 定义$x\sim x'$当且仅当$x$与$x'$属于同一个集合$C_a$. 容易验证这个关系是反身、对称且传递的，即$\sim$是一个等价关系. 进一步根据等价类的定义，若$x\in C_a$，则$C_a$就是等价类$\overline{x}$. 所以对于我们定义的这种等价关系，有$\pi(X)=\pi_{\sim}(X)$.
+\end{newproof}
+
+~\\
+由于等价关系与集合的划分是一一对应的，因此对应于等价关系$\sim$的划分$\pi_{\sim}(X)$通常记作$X/\sim$,也叫作$X$关于$\sim$的\textbf{商集}. 定义满射
+$p:x\longmapsto\overline{x}$，并称之为$X$到商集$X/\sim$上的\textbf{自然投影}(natural projection).
+
+方便起见，我们引入交换图(commutative diagram)作为工具. 例如下图：
+\[\xymatrix{
+	A\ar[r]^{f}\ar[d]_{g} & B\ar[d]^{\varphi} \\
+	C\ar[r]_{\psi}        & D 
+}\]
+我们称这个图表交换，当且仅当$\varphi\circ f = \psi\circ g$，即A中的元沿着两条路到达D得到同一个元.
+
+
+\begin{newprop}
+	给定映射$f:X\longrightarrow Y$. 在$X$上定义等价关系如下
+	\[a\sim b \iff f(a) = f(b).\]
+	设$p:X/\sim\longrightarrow Y$为自然投影. 则存在唯一映射$\overline{f}$,使得下图交换
+    \[\xymatrix{
+    	X\ar[r]^{p}\ar[dr]_{f} & X/\sim\ar[d]^{\overline{f}} \\
+    	  & Y 
+    }\]
+    并且$\overline{f}$是单射.
+\end{newprop}
+
+
+\newpage
+\begin{newproof}
+	令$\overline{f}(\overline{x})=f(x)$，则有
+	\[
+	\overline{f}\circ p(x)=\overline{f}(p(x))=\overline{f}(\overline{x})=f(x).
+	\]
+	这就证明了$\overline{f}$的存在性. 若$\overline{\phi}$满足$\overline{\phi}\circ p=f$，则对任意$\overline{x}\in X/\sim$, 有
+	\[
+	\overline{\phi}(\overline{x})=\overline{\phi}(p(x))=\overline{\phi}\circ p(x)=f(x)=\overline{f}(\overline{x}),
+	\]
+	即$\overline{\phi}=\overline{f}$，因此$\overline{f}$是唯一的. $\overline{f}$是单射由下述事实给出:$\;\forall\;\overline{x_1},\overline{x_2}\in X/\sim$，
+	\[
+	\overline{f}(\overline{x_1})=\overline{f}(\overline{x_2})\iff
+	f(x_1)=f(x_2)\iff \overline{x_1}=\overline{x_2}.
+	\] 
+\end{newproof}
+现在我们知道，这个交换图直观地描述了一个分解式
+\begin{equation}
+	f=\overline{f}\circ p,
+\end{equation}
+映射$f$总可以写成一个满射$p:x\longmapsto\overline{x}$和一个单射$\overline{f}:\overline{x}\longmapsto f(x)$的乘积.
 
 \bibliographystyle{ieeetr}
 \bibliography{reference}
