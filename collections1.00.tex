@@ -44,18 +44,18 @@
 \section{中国剩余定理}
 
 \subsection{历史背景}
-《孙子算经》是中国南北朝时期（公元5世纪）的数学著作\cite{szsj}. 其卷下第二十六题，叫做“物不知数”问题，原文如下:\\ 
+《孙子算经》是中国南北朝时期（公元5世纪）的数学著作\cite{szsj}. 其卷下第二十六题, 叫做“物不知数”问题, 原文如下:\\ 
 
-\emph{有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？}\\ 
+\emph{有物不知其数, 三三数之剩二, 五五数之剩三, 七七数之剩二。问物几何？}\\ 
 
 
-翻译成白话文，即一个整数除以三余二，除以五余三，除以七余二，求这个整数.《孙子算经》中首次提到了同余方程组问题，并给出了以上具体问题的解法，因此在一些中文数学文献中，中国剩余定理也会被称为孙子定理.
+翻译成白话文, 即一个整数除以三余二, 除以五余三, 除以七余二, 求这个整数.《孙子算经》中首次提到了同余方程组问题, 并给出了以上具体问题的解法, 因此在一些中文数学文献中, 中国剩余定理也会被称为孙子定理.
 
 宋朝数学家秦九韶于1247年《数书九章》卷一、二《大衍类》对“物不知数”问题做出了完整系统的解答。明朝数学家程大位将解法编成易于上口的《孙子歌诀》\cite{szgj}:\\ 
 
-\emph{三人同行七十希，五树梅花廿一支，七子团圆正半月，除百零五使得知.}\\
+\emph{三人同行七十希, 五树梅花廿一支, 七子团圆正半月, 除百零五使得知.}\\
 
-这个歌诀给出了模数为3、5、7时候的同余方程的秦九韶解法。意思是：将除以3得到的余数乘以70，将除以5得到的余数乘以21，将除以7得到的余数乘以15，全部加起来后除以105，得到的余数就是答案。比如说在以上的物不知数问题里面，使用以上的方法计算就得到
+这个歌诀给出了模数为3、5、7时候的同余方程的秦九韶解法。意思是：将除以3得到的余数乘以70, 将除以5得到的余数乘以21, 将除以7得到的余数乘以15, 全部加起来后除以105, 得到的余数就是答案。比如说在以上的物不知数问题里面, 使用以上的方法计算就得到
 \[ 70\times 2+21\times 3+15\times 2=233=2\times 105+23.\] 
 
 因此按歌诀求出的结果就是23.
@@ -63,28 +63,28 @@
 
 
 \subsection{定理陈述}
-  中国剩余定理有三种常见的表述方式，将在下面一一给出.
+  中国剩余定理有三种常见的表述方式, 将在下面一一给出.
   第一种是以余数的形式.我们首先引入带余除法的概念.
   
   
 \begin{newprop}[带余除法]
-  设$a\in \mathbb{Z}$，$b\in \mathbb{N^+}$.	一定存在唯一的整数对$(q,r)$，使$a=bq+r$，且$0\leq r< b$.其中$b=\left[\dfrac{a}{b}\right]$称作$a$除以$b$的不完全商，$r=a-b\left[\dfrac{a}{b}\right]$称作$a$除以$b$的余数，$r$也常常被记作$a\bmod b$.
+  设$a\in \mathbb{Z}$, $b\in \mathbb{N^+}$.	一定存在唯一的整数对$(q,r)$, 使$a=bq+r$, 且$0\leq r< b$.其中$b=\left[\dfrac{a}{b}\right]$称作$a$除以$b$的不完全商, $r=a-b\left[\dfrac{a}{b}\right]$称作$a$除以$b$的余数, $r$也常常被记作$a\bmod b$.
 \end{newprop} 
 
 
 \newpage
 
-  命题的证明是平凡的,这里略去.在下面定理的叙述中，我们总是假定$n_1,n_2,\cdots,n_k$是大于1的整数，而$n_i$常常称作模. 同时，我们记$N=n_1n_2\cdots n_k$为所有模的积. 现在给出中国剩余定理的第一种表述.
+  命题的证明是平凡的,这里略去.在下面定理的叙述中, 我们总是假定$n_1,n_2,\cdots,n_k$是大于1的整数, 而$n_i$常常称作模. 同时, 我们记$N=n_1n_2\cdots n_k$为所有模的积. 现在给出中国剩余定理的第一种表述.
   
   
   \begin{newthem}[中国剩余定理I]
-  	如果$n_i$两两互素,且整数$r_i$满足$0\leq r< n_i$,则存在唯一满足$0\leq x <N$的整数$x$，使得对每一个$i(1\leq i \leq k)$,都有$x\bmod n_i=r_i$.
+  	如果$n_i$两两互素,且整数$r_i$满足$0\leq r< n_i$,则存在唯一满足$0\leq x <N$的整数$x$, 使得对每一个$i(1\leq i \leq k)$,都有$x\bmod n_i=r_i$.
   \end{newthem}
 
-  上述表述是《孙子算经》中具体问题的一般化描述，但直接处理余数往往并不方便. 若引入同余记号，这个问题实际上就变成如何去求解一个一元一次同余方程组，这也是中国剩余定理的第二种表述，而它与第一种描述是完全等价的.
+  上述表述是《孙子算经》中具体问题的一般化描述, 但直接处理余数往往并不方便. 若引入同余记号, 这个问题实际上就变成如何去求解一个一元一次同余方程组, 这也是中国剩余定理的第二种表述, 而它与第一种描述是完全等价的.
   
   \begin{newthem}[中国剩余定理II]
-  	如果$n_1,n_2,\cdots,n_k$两两互素，且$r_1,r_2,\cdots,r_k \in \mathbb{Z}$，则同余方程组
+  	如果$n_1,n_2,\cdots,n_k$两两互素, 且$r_1,r_2,\cdots,r_k \in \mathbb{Z}$, 则同余方程组
   
   	\begin{equation*}
   	\left\{                          
@@ -96,13 +96,13 @@
   	\end{aligned}
   	\right.
   	\end{equation*}
-  有无穷多解，且任意两个解模$N$同余.	
+  有无穷多解, 且任意两个解模$N$同余.	
   
   \end{newthem}
 
 
   \begin{newproof}
-	先证存在性. 记除了$n_i$外所有模的乘积为$N_i=\dfrac{N}{n_i}$.因为$n_i$两两互素,故$N_i$也与$n_i$互素.由B\'{e}zout等式，存在整数$M_i,m_i$，使得
+	先证存在性. 记除了$n_i$外所有模的乘积为$N_i=\dfrac{N}{n_i}$.因为$n_i$两两互素,故$N_i$也与$n_i$互素.由B\'{e}zout等式, 存在整数$M_i,m_i$, 使得
 	\[
 	M_iN_i+m_in_i=1.
 	\]
@@ -110,44 +110,44 @@
 	\[
 	N_iM_i\equiv 1\pmod{n_i}.
 	\]
-	记$M_i=N_i^{-1}$为$N_i$的数论倒数，则x可以构造为$\sum\limits_{i=1}^{k}r_iN_i N_i^{-1}$.事实上，只要注意到$j\ne i$时$n_i|N_j$，于是有
+	记$M_i=N_i^{-1}$为$N_i$的数论倒数, 则x可以构造为$\sum\limits_{i=1}^{k}r_iN_i N_i^{-1}$.事实上, 只要注意到$j\ne i$时$n_i|N_j$, 于是有
 	\[
 	x\equiv \sum_{i=1}^{k}r_iN_{i} N_i^{-1}\equiv r_iN_i N_i^{-1}\equiv r_i\pmod{n_i}.
 	\]
-	再证唯一性.若$y$也是一个解，则$x\equiv y\equiv r_i\pmod{n_i}$. 又因为$n_i$两两互素，由算术基本定理知$x\equiv y\pmod{N}$.
-	综上可得，同余方程组的通解是
-	\[
+	再证唯一性.若$y$也是一个解, 则$x\equiv y\equiv r_i\pmod{n_i}$. 又因为$n_i$两两互素, 由算术基本定理知$x\equiv y\pmod{N}$.
+	综上可得, 同余方程组的通解是
+	\begin{equation}
 		x=\sum_{i=1}^{k}r_iN_i N_i^{-1}+mN \quad (m\in\mathbb{Z}).
-	\]
+	\end{equation}
   \end{newproof}
 
 
-  因为模$n_i$的剩余类构成一个环$\mathbb{Z}_{n_i}=\mathbb{Z}/n_i\mathbb{Z}$，运用抽象代数的语言，中国剩余定理可以描述成一个环同构. 在此之前，我们有必要先明确环的直积的定义.
+  因为模$n_i$的剩余类构成一个环$\mathbb{Z}_{n_i}=\mathbb{Z}/n_i\mathbb{Z}$, 运用抽象代数的语言, 中国剩余定理可以描述成一个环同构. 在此之前, 我们有必要先明确环的直积的定义.
 
 
 
 \begin{newdef}[环的直积]
-	给定两个环$(G,\emph{+},\ast)$和$(H,\oplus,\odot)$，它们的直积仍是一个环$(G\times H,+,\cdot)$，其中集合$G\times H=\{(g,h)|g\in G, h\in H\}$是$G$与$H$的笛卡儿积；环上的运算$+,\cdot$定义为
+	给定两个环$(G,\emph{+},\ast)$和$(H,\oplus,\odot)$, 它们的直积仍是一个环$(G\times H,+,\cdot)$, 其中集合$G\times H=\{(g,h)|g\in G, h\in H\}$是$G$与$H$的笛卡儿积；环上的运算$+,\cdot$定义为
 	\begin{itemize}
 		\parskip=0pt \itemsep=0pt
 		\item $(g_1,h_1)+(g_2,h_2)=(g_1\emph{+}g_2,h_1\oplus h_2)$
 		\item $(g_1,h_1)\cdot(g_2,h_2)=(g_1\ast g_2,h_1\odot h_2)$
 	\end{itemize}
-	在不会引起误解的情形下，环$(G\times H,\emph{+},\ast)$可简记$G\times H$,其乘法单位元为$(1_G,1_H)$. 类似地，对于可数个环，我们也可通过这种分量加法和分量乘法的方式，定义$\{R_i\}_{i\in I}$的直积$\prod\limits_{i\in I}R_i$.
+	在不会引起误解的情形下, 环$(G\times H,\emph{+},\ast)$可简记$G\times H$,其乘法单位元为$(1_G,1_H)$. 类似地, 对于可数个环, 我们也可通过这种分量加法和分量乘法的方式, 定义$\{R_i\}_{i\in I}$的直积$\prod\limits_{i\in I}R_i$.
 \end{newdef}
 
 
-  有了环的直积这一个概念后，就可以正式介绍定理的第三种表述了. 这将为我们提供一个更加清晰的视角.
+  有了环的直积这一个概念后, 就可以正式介绍定理的第三种表述了. 这将为我们提供一个更加清晰的视角.
 
   
   \begin{newthem}[中国剩余定理III]
-  	若$n_1n_2\cdots n_k$两两互素，则映射
+  	若$n_1n_2\cdots n_k$两两互素, 则映射
   	\[
-  	\varphi:(x\bmod n_1,x\bmod n_2,\cdots,x\bmod n_k)\mapsto x\bmod N
+  	\varphi:(x\bmod n_1,x\bmod n_2,\cdots,x\bmod n_k)\longmapsto x\bmod N
   	\]
   	确定一个环同构
   	\[
-  	\varphi:\mathbb{Z}/n_1\mathbb{Z}\times\mathbb{Z}/n_2\mathbb{Z}\times\cdots\times\mathbb{Z}/n_k\mathbb{Z}\rightarrow\mathbb{Z}/N\mathbb{Z}.
+  	\varphi:\mathbb{Z}/n_1\mathbb{Z}\times\mathbb{Z}/n_2\mathbb{Z}\times\cdots\times\mathbb{Z}/n_k\mathbb{Z}\longrightarrow\mathbb{Z}/N\mathbb{Z}.
   	\]
   
 
@@ -155,13 +155,13 @@
 
 
   \begin{newproof}
-	在下面的证明中为了书写简便，对于模$m$剩余类$\bar{x}=x+m\mathbb{Z}=\{x+km|k\in\mathbb{Z}\}\in \mathbb{Z}/m\mathbb{Z}$，我们将它与剩余类的代表元$x$不做区分. 首先证明$\varphi$是一个双射.事实上，如果
+	在下面的证明中为了书写简便, 对于模$m$剩余类$\bar{x}=x+m\mathbb{Z}=\{x+km|k\in\mathbb{Z}\}\in \mathbb{Z}/m\mathbb{Z}$, 我们将它与剩余类的代表元$x$不做区分. 首先证明$\varphi$是一个双射.事实上, 如果
 	\[
 	\varphi(r_1,r_2,\cdots,r_k)=\varphi(r_1^{'},r_2^{'},\cdots,r_k^{'})=R,
 	\]
-	则有$r_i\equiv r_i^{'}\equiv R \pmod{n_i} $，或$(r_1,r_2,\cdots,r_k)=(r_1^{'},r_2^{'},\cdots,r_k^{'}).$这说明$\varphi$是单射.
+	则有$r_i\equiv r_i^{'}\equiv R \pmod{n_i} $, 或$(r_1,r_2,\cdots,r_k)=(r_1^{'},r_2^{'},\cdots,r_k^{'}).$这说明$\varphi$是单射.
 	又注意到基数$\left|\mathbb{Z}/n_1\mathbb{Z}\times\mathbb{Z}/n_2\mathbb{Z}\times\cdots\times\mathbb{Z}/n_k\mathbb{Z}\right|=\left|\mathbb{Z}/N\mathbb{Z}\right|=N$,所以$\varphi$一定是双射.
-	此外，我们还需验证双射$\varphi$保持运算。根据环的直积的定义，我们有
+	此外, 我们还需验证双射$\varphi$保持运算。根据环的直积的定义, 我们有
 	
 	\begin{equation*}	
 	\begin{aligned}
@@ -186,7 +186,7 @@
 
   \end{newproof}
 
-  从环同构的观点出发，我们可以将定理自然地推广到一般的PID（主理想整环）上，这时$R$模掉极大理想$I$得到的的商环$R/I$代替了原先的剩余类环$\mathbb{Z}/m\mathbb{Z}$. 原因是证明中用到的B\'{e}zout等式在PID上有对应的推广，而算术基本定理（唯一分解定理）在更一般的UFD（唯一分解整环）上也成立. 进一步地，通过定义互素理想，我们还可以将定理推广到任意环上.
+  从环同构的观点出发, 我们可以将定理自然地推广到一般的PID（主理想整环）上, 这时$R$模掉极大理想$I$得到的的商环$R/I$代替了原先的剩余类环$\mathbb{Z}/m\mathbb{Z}$. 原因是证明中用到的B\'{e}zout等式在PID上有对应的推广, 而算术基本定理（唯一分解定理）在更一般的UFD（唯一分解整环）上也成立. 进一步地, 通过定义互素理想, 我们还可以将定理推广到任意环上.
 
 \chapter{代数}
 \section{基础概念}
@@ -194,12 +194,12 @@
 \subsection{等价关系}
 
 \begin{newdef}[二元关系]
-	设$X,Y$是任意两个集合，其任意子集$\mathcal{R}\in X\times Y$叫做$X$与$Y$之间的一个\textbf{二元关系}.若$X=Y$,则简称为$X$上的一个二元关系.	
+	设$X,Y$是任意两个集合, 其任意子集$\mathcal{R}\in X\times Y$叫做$X$与$Y$之间的一个\textbf{二元关系}.若$X=Y$,则简称为$X$上的一个二元关系.	
 \end{newdef}
 有序对$(x,y)\in\mathcal{R}$可简记为$x\mathcal{R} y$.
 
 \begin{newdef}[等价关系]
-	集合$X$上的二元关系$\sim$叫作\textbf{等价关系}，如果任取$x,x',x''\in X$，满足:
+	集合$X$上的二元关系$\sim$叫作\textbf{等价关系}, 如果任取$x,x',x''\in X$, 满足:
 	\begin{enumerate}
 		\item 反身性：$x\sim x$；
 		\item 对称性：$x\sim x'\implies x'\sim x$；
@@ -211,84 +211,302 @@
 元素$a,b\in X$不具有等价关系记作$a\not\sim b$.
 
 \begin{newdef}[等价类]
-	在集合$X$中，与给定元素$x$等价的所有元素的集合，叫作包含$x$的\textbf{等价类}，记为
+	在集合$X$中, 与给定元素$x$等价的所有元素的集合, 叫作包含$x$的\textbf{等价类}, 记为
 	\[\overline{x}:=\{x'\in X|x'\sim x\}\subset X.\]
 	任意元素$x'\in\overline{x}$叫作$\overline{x}$的\textbf{代表元}.
 \end{newdef}
 
 
-我们将在下述两个对偶的命题中看到，等价关系与集合的分类有着密切的联系.
+我们将在下述两个对偶的命题中看到, 等价关系与集合的分类有着密切的联系.
 
-先叙述一下记号. 集合$X$的所有子集组成的集合称为$X$的\textbf{幂集}，记作
-\[\mathcal{P}(X):=\bigcup_{S\subset X} S.\]
-如果集合$X$能够表示成其若干非空子集的不交并，那么这些称这些子集的集合为$X$的一个\textbf{划分}，并记作$\pi(X)$.
+先叙述一下记号. 集合$X$的所有子集组成的集合称为$X$的\textbf{幂集}, 记作
+\[\mathcal{P}(X):=\{S|S\subset X\}=\bigcup_{S\subset X}\{S\}.\]
+如果集合$X$能够表示成其若干非空子集的不交并, 那么这些称这些子集的集合为$X$的一个\textbf{划分}, 并记作$\pi(X)$.
 
 
 \begin{newprop}
-	由关系$\sim$确定的所有等价类的集合是集合$X$的一个划分，即$X$是这些等价类的不交并，记作
-	\[\pi_{\sim}(X)=\{\overline{x}\in \mathcal{P}(X)|x\in X\}.\]
+	由关系$\sim$确定的所有等价类的集合是集合$X$的一个划分, 即$X$是这些等价类的不交并, 记作
+	\[\pi_{\sim}(X):=\{\overline{x}\in \mathcal{P}(X)|x\in X\}.\]
 \end{newprop}
 
 
 \begin{newproof}
-	注意到$x\in \overline{x}$，因此$\bigcup_{x\in X}\overline{x}=X$. 如果存在两个不同的等价类$\overline{x_1},\overline{x_2}$，使得$\overline{x_1}\bigcap\overline{x_2}=x'$,那么有$x'\sim x_1$和$x'\sim x_2$. 由等价关系的传递性知$x_1\sim x_2$,即$\overline{x_1}=\overline{x_2}$，矛盾！故对任意两个不同的等价类$\overline{x_1},\overline{x_2}$，都有$\overline{x_1}\bigcap\overline{x_2}=\varnothing.$
+	注意到$x\in \overline{x}$, 因此$\bigcup_{x\in X}\overline{x}=X$. 如果存在两个不同的等价类$\overline{x_1},\overline{x_2}$, 使得$\overline{x_1}\bigcap\overline{x_2}=x'$,那么有$x'\sim x_1$和$x'\sim x_2$. 由等价关系的传递性知$x_1\sim x_2$,即$\overline{x_1}=\overline{x_2}$, 矛盾！故对任意两个不同的等价类$\overline{x_1},\overline{x_2}$, 都有$\overline{x_1}\bigcap\overline{x_2}=\varnothing.$
+	
 \end{newproof}
 
 
 \begin{newprop}
-	如果$\pi(X)$是将集合$X$分成不相交子集$C_t$的一个划分，则$C_t$是由某一等价关系$\sim$确定的等价类.
+	如果$\pi(X)$是将集合$X$分成不相交子集的一个划分, 则这些子集是由某一等价关系$\sim$确定的全部等价类.
 \end{newprop}
 
 
 \begin{newproof}
-	设集合$X=\bigcup_{C_t\in\pi(X)}C_t$. 根据划分的定义，每个元素$x\in X$仅被包含在一个子集$C_a$中. 定义$x\sim x'$当且仅当$x$与$x'$属于同一个集合$C_a$. 容易验证这个关系是反身、对称且传递的，即$\sim$是一个等价关系. 进一步根据等价类的定义，若$x\in C_a$，则$C_a$就是等价类$\overline{x}$. 所以对于我们定义的这种等价关系，有$\pi(X)=\pi_{\sim}(X)$.
+	根据划分的定义, 集合$X=\bigcup_{C_t\in\pi(X)}C_t$. 且每个元素$x\in X$仅被包含在一个子集$C_a$中. 定义$x\sim x'$当且仅当$x$与$x'$属于同一个集合$C_a$. 容易验证这个关系是反身、对称且传递的, 即$\sim$是一个等价关系. 进一步根据等价类的定义, 若$x\in C_a$, 则$C_a$就是等价类$\overline{x}$. 所以对于我们定义的这种等价关系$\sim$, 有$\pi(X)=\pi_{\sim}(X)$.
+	
 \end{newproof}
+\par
 
-~\\
-由于等价关系与集合的划分是一一对应的，因此对应于等价关系$\sim$的划分$\pi_{\sim}(X)$通常记作$X/\sim$,也叫作$X$关于$\sim$的\textbf{商集}. 定义满射
-$p:x\longmapsto\overline{x}$，并称之为$X$到商集$X/\sim$上的\textbf{自然投影}(natural projection).
+由于等价关系与集合的划分是一一对应的, 因此对应于等价关系$\sim$的划分$\pi_{\sim}(X)$通常记作$X/\sim$,也叫作$X$关于$\sim$的\textbf{商集}. 定义满射
+$\pi:x\longmapsto\overline{x}$, 并称之为$X$到商集$X/\sim$上的\textbf{自然映射}(natural map)或\textbf{典范映射}(canonical map)或\textbf{自然投影}(natural projection).
 
-方便起见，我们引入交换图(commutative diagram)作为工具. 例如下图：
+方便起见, 我们引入交换图(commutative diagram)作为工具. 例如下图：
 \[\xymatrix{
 	A\ar[r]^{f}\ar[d]_{g} & B\ar[d]^{\varphi} \\
 	C\ar[r]_{\psi}        & D 
 }\]
-我们称这个图表交换，当且仅当$\varphi\circ f = \psi\circ g$，即A中的元沿着两条路到达D得到同一个元.
+我们称这个图表交换, 当且仅当$\varphi\circ f = \psi\circ g$, 即A中的元沿着图中两条路到达D得到同一个元.
 
 
 \begin{newprop}
-	给定映射$f:X\longrightarrow Y$. 在$X$上定义等价关系如下
-	\[a\sim b \iff f(a) = f(b).\]
-	设$p:X/\sim\longrightarrow Y$为自然投影. 则存在唯一映射$\overline{f}$,使得下图交换
+	给定映射$f:X\longrightarrow Y$. 在$X$上定义等价关系$\omega_f$如下
+	\[a\omega_f b \iff f(a) = f(b).\]
+	设$\pi:X\longrightarrow X/\omega_f$为自然映射. 则存在唯一映射$\overline{f}:X/\omega_f\longrightarrow Y$,使得下图交换, 并且$\overline{f}$是单射.
     \[\xymatrix{
-    	X\ar[r]^{p}\ar[dr]_{f} & X/\sim\ar[d]^{\overline{f}} \\
-    	  & Y 
+    	X\ar[d]_{\pi}\ar[r]^{f} & Y \\
+    	X/\omega_f \ar@{-->}[ur]_{\overline{f}} &  
     }\]
-    并且$\overline{f}$是单射.
 \end{newprop}
 
 
 \newpage
 \begin{newproof}
-	令$\overline{f}(\overline{x})=f(x)$，则有
+	令$\overline{f}:\overline{x}\longmapsto f(x)$. 首先验证$\overline{f}$是良定义的, 即无论$\overline{x}$的代表元如何选取, $f(\overline{x})$的值是唯一确定的. 事实上, 若$x_1,x_2$属于同一等价类, 则$\overline{x_1}=\overline{x_2}$. 由$\omega_f$的定义立知$f(x_1)=f(x_2)$. 接着说明这样构造的$\overline{f}$的确使得$f=\overline{f}\circ \pi$. 因为对任意$x\in X$,都有
 	\[
-	\overline{f}\circ p(x)=\overline{f}(p(x))=\overline{f}(\overline{x})=f(x).
+	\overline{f}\circ \pi(x)=\overline{f}(\pi(x))=\overline{f}(\overline{x})=f(x).
 	\]
-	这就证明了$\overline{f}$的存在性. 若$\overline{\phi}$满足$\overline{\phi}\circ p=f$，则对任意$\overline{x}\in X/\sim$, 有
+	$\overline{f}$的存在性也得到了证明. 若存在一个映射$\overline{\phi}$满足$\overline{\phi}\circ \pi=f$, 则对任意$\overline{x}\in X/\omega_f$, 有
 	\[
-	\overline{\phi}(\overline{x})=\overline{\phi}(p(x))=\overline{\phi}\circ p(x)=f(x)=\overline{f}(\overline{x}),
+	\overline{\phi}(\overline{x})=\overline{\phi}(\pi(x))=\overline{\phi}\circ \pi(x)=f(x)=\overline{f}(\overline{x}),
 	\]
-	即$\overline{\phi}=\overline{f}$，因此$\overline{f}$是唯一的. $\overline{f}$是单射由下述事实给出:$\;\forall\;\overline{x_1},\overline{x_2}\in X/\sim$，
+	即$\overline{\phi}=\overline{f}$, 因此$\overline{f}$是唯一的. $\overline{f}$是单射由下述事实给出:$\;\forall\;\overline{x_1},\overline{x_2}\in X/\omega_f$, 
 	\[
 	\overline{f}(\overline{x_1})=\overline{f}(\overline{x_2})\iff
 	f(x_1)=f(x_2)\iff \overline{x_1}=\overline{x_2}.
 	\] 
 \end{newproof}
-现在我们知道，这个交换图直观地描述了一个分解式
+
+现在我们知道, 这个交换图直观地描述了一个分解式
 \begin{equation}
-	f=\overline{f}\circ p,
+	f=\overline{f}\circ \pi,
 \end{equation}
-映射$f$总可以写成一个满射$p:x\longmapsto\overline{x}$和一个单射$\overline{f}:\overline{x}\longmapsto f(x)$的乘积.
+映射$f$总可以写成一个满射$\pi:x\longmapsto\overline{x}$和一个单射$\overline{f}:\overline{x}\longmapsto f(x)$的乘积.
+
+\section{基本定理}
+\subsection{同态基本定理}
+同态基本定理在幺半群, 群, 环, 模, 线性空间上都成立. 这里给出的是线性空间上的版本, 也叫做线性映射基本定理. 但在叙述时, 对同态和线性映射不做区分.
+
+\begin{newthem}[同态基本定理 Fundamental Homomorphism Theorem]
+	设$V,V'$是域$F$上的线性空间, $f\in\mathrm{Hom}(V,V')$. 定义自然同态
+	\[\pi:V\longrightarrow V/\mathrm{Ker}\;f,\;\alpha\longmapsto \alpha+\mathrm{Ker}\;f.\] 
+	则存在唯一同态$\overline{f}:V/\mathrm{Ker}\;f\longrightarrow V'$, 使得$f=\overline{f}\circ\pi$, 即下图交换. 且$\overline{f}$是一个单同态.
+	\[\xymatrix{
+		V\ar[d]_{\pi}\ar[r]^{f} & V' \\
+		V/\mathrm{Ker}\;f \ar@{-->}[ur]_{\overline{f}} &  
+	}\]
+\end{newthem}
+
+\newpage
+\begin{newproof}
+	首先证明由商空间$V/\mathrm{Ker}\;f$确定的等价关系$\alpha_1\sim\alpha_2\iff\alpha_1-\alpha_2\in\mathrm{Ker}\;f$满足$\alpha_1\sim\alpha_2\iff f(\alpha_1) = f(\alpha_2)$. 若$\alpha_1-\alpha_2\in\mathrm{Ker}\;f$,设$\alpha_1=\alpha_2+k\;(k\in\mathrm{Ker}\;f)$,则有\[f(\alpha_1) =f(\alpha_2+k)=f(\alpha_2)+f(k)=f(\alpha_2).\]
+	反之, 若$f(\alpha_1) = f(\alpha_2)$,则\[f(\alpha_1-\alpha_2)=f(\alpha_1)-f(\alpha_2)=0.\]
+	于是$\alpha_1-\alpha_2\in\mathrm{Ker}\;f$. 这就证明了$\alpha_1-\alpha_2\in\mathrm{Ker}\;f\iff f(\alpha_1) = f(\alpha_2).$
+	结合Proposition 2.3, 只需验证$\overline{f}$是一个线性映射. 对任意$k,l\in F,\overline{\alpha}$和$\overline{\beta}\in V/\mathrm{Ker}\;f$, 有
+	\[
+	\begin{aligned}
+	\overline{f}(k\overline{\alpha}+l\overline{\beta})
+	&=\overline{f}(\overline{k\alpha+l\beta})\\
+	&=kf(\alpha)+lf(\beta)\\
+	&=f(k\alpha+l\beta)\\
+	&=k\overline{f}(\overline{\alpha})+l\overline{f}(\overline{\beta}).
+	\end{aligned}
+	\]
+	因此定理成立.
+	
+\end{newproof}
+\par
+
+一个自然的问题是：如果$V$模去的子空间不是$\mathrm{Ker}\;f$, 是否也有类似的交换图？下面的\hyperlink{Proposition 2.4}{Proposition 2.4}回答了这个问题. 作为预备, 我们先证明一个引理.    
+
+\begin{newlemma}\hypertarget{Lemma 2.1}{}
+	设$W,U$都是域$F$线性空间上$V$的子空间, 且$W\subset U\subset V$. 定义
+	\[
+	\begin{aligned}
+	\eta:V/W&\longrightarrow V/U\\
+         v+W&\longmapsto v+U.	
+	\end{aligned}
+	\]
+	则$\eta$是一个满同态.
+\end{newlemma}
+
+\newpage
+
+\begin{newproof}
+	证明$\eta$是良定义的. 由$W\subset U\subset V$知：对任意$v_1,v_2\in V$,若$v_1-v_2\in W$,则$v_1-v_2\in U$. 这表明
+	\[
+	\eta(v_1+W)=v_1+U=v_2+U=\eta(v_2+W),
+	\]
+	即 $v+W$ 的像与代表元 $v$ 的选取无关.\\
+	证明$\eta$是线性映射. 对任意$v_1,v_2\in V$和$k\in F$, 有
+	\[
+	\eta(v_1+v_2+W)=(v_1+v_2)+U=(v_1+U)+(v_2+U)=\eta(v_1+W)+\eta(v_2+W).
+	\]
+	\[
+	\eta(kv_1+W)=kv_1+U=k(v_1+U)=k\eta(v_1+v_2+W).
+	\]
+	证明$\eta$是满射. 对任意$v+U\in V/U$, 有$\eta(v+W)=v+U$.\par
+	综上所述, $\eta$是一个满同态.
+	
+\end{newproof}
+
+
+\hypertarget{Proposition 2.4}{}
+\begin{newprop}
+	设$V,V'$是域$F$上的线性空间, $f\in\mathrm{Hom}(V,V')$, $W$是$V$的一个子空间. 记$\pi_1:\alpha\longmapsto \alpha+W$为$V$到$V/W$上的自然同态. 当且仅当$W\subset\mathrm{Ker}\;f$时,  存在唯一同态$\overline{f_1}:V/W\longrightarrow V'$,  使得$f=\overline{f_1}\circ\pi_1$, 即下图交换. 
+	\[\xymatrix{
+		V\ar[d]_{\pi_1}\ar[r]^{f} & V' \\
+		V/W \ar@{-->}[ur]_{\overline{f_1}} &  
+	}\]
+\end{newprop} 
+
+
+\begin{newproof}
+	若$W\subset\mathrm{Ker}\;f$, 考虑如下图表
+	\[\xymatrix{
+		V\ar[d]_{\pi_1}\ar[r]^{f}\ar@<-2pt>[rd]_{\quad\quad\quad\pi} & V' \\
+		V/W \ar@{-->}[ur]^{\quad\quad\quad\quad\quad\overline{f_1}}\ar@<2pt>[r]_{\eta} & V/\mathrm{Ker}\;f \ar@{-->}[u]_{\overline{f}}
+	}\]
+    其中$\pi$与$\overline{f}$的定义继承于Theorem 2.1, $\eta$则依照Lemma 2.1定义为$\eta:v+W\mapsto v+\mathrm{Ker}\;f$. 为了确定该图交换, 只需验证$\eta\circ\pi_1=\pi$. 事实上, 对任意$\alpha\in V$, 
+    \[
+    \eta\circ\pi_1(\alpha)=\eta(\pi_1(\alpha))=\eta(\alpha+W)=\alpha+\mathrm{Ker}\;f=\pi(\alpha).
+    \] 
+    令 $\overline{f_1}=\overline{f}\circ\eta$, 则有
+    \[
+    \overline{f_1}\circ\pi_1=(\overline{f}\circ\eta)\circ\pi_1=
+    \overline{f}\circ(\eta\circ\pi_1)=\overline{f}\circ\pi=f.
+    \]
+    注意到$\overline{f_1}(\alpha+W)=\overline{f_1}(\pi_1(\alpha))=\overline{f_1}\circ\pi_1(\alpha)=f(\alpha)$, 即$\overline{f_1}$若存在, 其在任意点处的取值是确定的. 这说明$\overline{f_1}$是唯一的. 特别地, $\overline{f_1}(W)=f(0)=0$.\par
+    反之, 若存在同态$\overline{f_1}:V/W\longrightarrow V'$, 使得$f=\overline{f_1}\circ\pi_1$, 则对任意$\alpha\in W$, 有 $f(\alpha)=\overline{f_1}(\pi_1(\alpha))=\overline{f_1}(W)=0$, 即$W\subset\mathrm{Ker}\;f$. 
+    
+\end{newproof}	
+\par
+完成同态基本定理的推广后, 再来看它的一个特例. 若将$f$看成$V$到$\mathrm{Im}f$上的同态, 则$f$为满射. 由$\mathrm{Im}f=\mathrm{Im}\overline{f}$知$\overline{f}$此时也是满射. 于是下面的定理成立.
+
+
+\begin{newthem}[第一同构定理 First Isomorphism Theorem]
+
+	设$V,V'$是域$F$上的线性空间, $f\in\mathrm{Hom}(V,V')$,  则$V/\mathrm{Ker}\;f\cong\mathrm{Im}f$. 即下图交换.
+	\[\xymatrix{
+		V\ar[d]_{\pi}\ar[r]^{f} & \mathrm{Im}f \\
+		V/\mathrm{Ker}\;f \ar@{-->}[ur]_{\overline{f}}^{\cong} &  
+	}\]
+
+\end{newthem}
+
+第一同构定理的应用相当广泛, 下面的 \hyperlink{Proposition 2.5}{Proposition 2.5} 就是一个例子. 在此之前, 先证明一个引理是有帮助的. 在后文中会用到以下记号. 设 $f$ 是 $V$ 到 $V'$ 的映射, $U\subset V$, $H\subset V'$. $f|_U$ 的像集记作 $f(U):=\{f(u)\in V'|u\in U\}$. $H$ 中各元素的所有原像构成的集合记作 $f^{-1}(H):=\{v\in V|f(v)\in H\}$. 对于单元素集 $\{a\}$, $f(\{a\}),f^{-1}(\{a\})$ 可简记为 $f(a),f^{-1}(a)$.
+
+\hypertarget{Lemma 2.2}{}
+\begin{newlemma}
+	设$V,V'$是域$F$上的线性空间, $f$是$V$到$V'$上的线性映射. 记
+	\[
+	S_f(V)=\{U|\,U\text{是}V\text{的子空间},\;\mathrm{Ker}\;f\subset U\},	
+	\]	
+	\[
+	S_f(V')=\{U'|\,U'\text{是}f(V)\text{的子空间}\},
+	\]
+	则映射$\sigma:S_f(V)\rightarrow S_f(V'),U\mapsto f(U)$是双射.
+\end{newlemma}
+
+\hypertarget{Proposition 2.5}{}
+\begin{newproof}
+    \[\xymatrix@C=1.8pt{
+    	\mathrm{Ker}\;f\ar[d]_{f} & \subset & U\ar[d]_{f} & \subset & V\ar[d]_{f} \\
+    	0 & \subset & f(U) & \subset & f(V) 
+    }\]		
+	
+先证$\sigma$是满的. 设 $U\in S_f(V')$, 只需证$f^{-1}(U)\in S_f(V)$. 任取$\alpha,\beta\in f^{-1}(U)$, $k,l\in F$, 因为$f(\alpha),f(\beta)\in U$, 所以
+\[
+f(k\alpha+l\beta)=kf(\alpha)+lf(\beta)\in U,
+\]
+即$k\alpha+l\beta\in f^{-1}(U)$. 这说明$f^{-1}(U)$是$V$的子空间. 又因为$f(\mathrm{Ker}\;f)=\{0\}\subset f(U)$, 故$\mathrm{Ker}\;f\subset f^{-1}(U)$, 从而有$f^{-1}(U)\in S_f(V)$.\par
+再证$\sigma$是单的. 若$\sigma(U_1)=\sigma(U_2)$, 即$f(U_1)=f(U_2)$, 则对任意 $u_1\in U_1$, $f(u_1)\in f(U_1)=f(U_2)$, 因此存在$u_2\in U_2$, 使得$f(u_2)=f(u_1)$. 于是$f(u_1)-f(u_2)=f(u_1-u_2)=0$,  $u_1-u_2\in\mathrm{Ker}\;f\subset U_2$. 从而$u_1=u_2+(u_1-u_2)\in U_2$,  故$U_1\subset U_2$. 同理可得$U_2\subset U_1$. 因此$U_1=U_2$.	
+	
+\end{newproof}	
+
+\begin{newprop}
+	设$V,V'$是域$F$上的线性空间, $f:V\longrightarrow V'$是满同态,  $V$的子空间$U$满足$\mathrm{Ker}\;f\subset U$. 则
+	\[
+	V/U\cong V'/f(U).
+	\]
+\end{newprop}
+
+\begin{newproof}
+	设$\pi':V'\rightarrow V'/f(H)$是自然同态. 因为$f$和$\pi'$都是满射, 复合同态
+	\[ \pi'\circ f:V\xrightarrow{\;\;\; f\;\;\;}V'\xrightarrow{\;\;\;\pi'\;\;\;}V'/f(U)
+	\]
+	显然是满射. 由 \hyperlink{Lemma 2.2}{Lemma 2.2} 知 
+	\[
+	\mathrm{Ker}\;(\pi'\circ f)=(\pi'\circ f)^{-1}(0+f(U))= f^{-1}\circ\pi'^{-1}(0+f(U))=f^{-1}(f(U))=U.
+	\]
+	运用第一同构定理, 就得到了 $V/U\cong V'/f(U)$. 同构映射 $\overline{g}$ 满足交换图
+	\[\xymatrix{
+		V\ar[d]_{\pi}\ar@{>>}[r]^{f\ } & V'\ar@{>>}[r]^{\pi'\ \quad} & V'/f(U)\\
+		V/U \ar@{-->}[urr]_{\overline{g}} &  
+	}\]
+\end{newproof}
+
+我们继续运用第一同构定理证明第二同构定理和第三同构定理.
+
+\begin{newthem}[第二同构定理 Second Isomorphism Theorem]
+	
+	设 $U$ 和 $W$ 是域$F$上线性空间 $V$ 的子空间, 则
+	\[
+	(U+W)/U=W/(U\cap W).
+	\]
+	
+\end{newthem}
+
+\begin{newproof}
+	设 $i$ 是嵌入映射, $\pi':U+W\rightarrow (U+W)/W$ 是自然同态. 复合同态
+	\[\pi'\circ i:U\xrightarrow{\;\;\; i\;\;\;}U+W\xrightarrow{\;\;\;\pi'\;\;\;}(U+W)/W
+	\]
+	是满射. 记 $f= \pi'\circ i$,
+	\[
+	\mathrm{Ker}\;f=(\pi'\circ i)^{-1}(0+W)= i^{-1}\circ\pi'^{-1}(0+W)=i^{-1}(W)=U\cap W.
+	\]
+	运用第一同构定理, 就得到了 $U/\mathrm{Ker}\;f =U/U\cap W\cong(U+W)/W$. 同构映射 $\overline{f}$ 满足交换图
+	\[\xymatrix{
+		U\ar[d]_{\pi}\ar@{^{(}->}[r]^{i\quad\ } & U+W\ar@{>>}[r]^{\pi'\ \quad} & (U+W)/W\\
+		V/U \ar@{-->}[urr]_{\overline{f}} &  
+	}\]
+\end{newproof}
+
+\begin{newthem}[第三同构定理 Third Isomorphism Theorem]
+	
+	设$W,U$都是域$F$上线性空间$V$的子空间, 且$W\subset U\subset V$, 则
+	\[
+	V/U\cong (V/W)/(V/W)
+	\]
+	
+\end{newthem}
+
+\begin{newproof}
+	由 \hyperlink{Lemma 2.1}{Lemma 2.1} 知$\eta:V/W\longrightarrow V/U,\ 
+	v+W\longmapsto v+U$ 是满同态. 下证 $\mathrm{Ker}\;\eta=\eta^{-1}(0+U)=U/W$.\\
+	任取 $u+W\in U/W$,
+	\[
+	\eta(u+W)=u+U=0+U\in V/U
+	\]
+	即 $u+W\in\mathrm{Ker}\;\eta$, 故 $U/W\subset\mathrm{Ker}\;\eta$.
+	任取 $x+W\in \mathrm{Ker}\;\eta$, 有 $\eta(x+W)=x+U=0+U$, 故 $x\in U$, 从而有 $x+W\in U/W$. 于是 $\mathrm{Ker}\;\eta\subset U/W$. 因此有 $\mathrm{Ker}\;\eta=U/W$.\\
+	由第一同构定理, 得到 $(V/W)/\mathrm{Ker}\;\eta =(V/W)/(U/W)\cong V/U$. 同构映射 $\overline{\eta}$ 满足交换图
+	\[\xymatrix{
+		V/W\ar@{>>}[r]^{\eta}\ar[d]^{\pi} & V/U\\
+		(V/W)/(U/W) \ar@{-->}[ur]_{\overline{\eta}} 
+	}\]
+\end{newproof}
+
+
 
 \bibliographystyle{ieeetr}
 \bibliography{reference}
