@@ -1,7 +1,7 @@
 
 \documentclass[color=green,mathpazo,titlestyle=hang]{elegantbook}
 
-\author{Huyi Chen}
+\author{Hooy}
 \email{hooyuser@outlook.com}
 \zhtitle{数学}
 \zhend{收集箱}
@@ -9,8 +9,7 @@
 \entitle{Collections}
 \enend{Of Math}
 \version{1.00}
-\myquote{If people do not believe that mathematics is simple,\\ 
-	it is only because they do not realize how complicated life is.}
+\myquote{\textsc{\noindent If people do not believe that mathematics is simple,	it is only because they do not realize how complicated life is.}}
 \logo{box.pdf}
 \cover{grass.pdf}
   
@@ -110,7 +109,7 @@
 	\[
 	N_iM_i\equiv 1\pmod{n_i}.
 	\]
-	记$M_i=N_i^{-1}$为$N_i$的数论倒数, 则x可以构造为$\sum\limits_{i=1}^{k}r_iN_i N_i^{-1}$.事实上, 只要注意到$j\ne i$时$n_i|N_j$, 于是有
+	记$M_i=N_i^{-1}$为$N_i$的数论倒数, 则$x$可以构造为$\sum\limits_{i=1}^{k}r_iN_i N_i^{-1}$.事实上, 只要注意到$j\ne i$时$n_i|N_j$, 于是有
 	\[
 	x\equiv \sum_{i=1}^{k}r_iN_{i} N_i^{-1}\equiv r_iN_i N_i^{-1}\equiv r_i\pmod{n_i}.
 	\]
@@ -417,7 +416,7 @@ $\pi:x\longmapsto\overline{x}$, 并称之为$X$到商集$X/\sim$上的\textbf{�
 	则映射$\sigma:S_f(V)\rightarrow S_f(V'),U\mapsto f(U)$是双射.
 \end{newlemma}
 
-\hypertarget{Proposition 2.5}{}
+
 \begin{newproof}
     \[\xymatrix@C=1.8pt{
     	\mathrm{Ker}\;f\ar[d]_{f} & \subset & U\ar[d]_{f} & \subset & V\ar[d]_{f} \\
@@ -431,8 +430,10 @@ f(k\alpha+l\beta)=kf(\alpha)+lf(\beta)\in U,
 即$k\alpha+l\beta\in f^{-1}(U)$. 这说明$f^{-1}(U)$是$V$的子空间. 又因为$f(\mathrm{Ker}\;f)=\{0\}\subset f(U)$, 故$\mathrm{Ker}\;f\subset f^{-1}(U)$, 从而有$f^{-1}(U)\in S_f(V)$.\par
 再证$\sigma$是单的. 若$\sigma(U_1)=\sigma(U_2)$, 即$f(U_1)=f(U_2)$, 则对任意 $u_1\in U_1$, $f(u_1)\in f(U_1)=f(U_2)$, 因此存在$u_2\in U_2$, 使得$f(u_2)=f(u_1)$. 于是$f(u_1)-f(u_2)=f(u_1-u_2)=0$,  $u_1-u_2\in\mathrm{Ker}\;f\subset U_2$. 从而$u_1=u_2+(u_1-u_2)\in U_2$,  故$U_1\subset U_2$. 同理可得$U_2\subset U_1$. 因此$U_1=U_2$.	
 	
-\end{newproof}	
+\end{newproof}
 
+	
+\hypertarget{Proposition 2.5}{}
 \begin{newprop}
 	设$V,V'$是域$F$上的线性空间, $f:V\longrightarrow V'$是满同态,  $V$的子空间$U$满足$\mathrm{Ker}\;f\subset U$. 则
 	\[
@@ -461,7 +462,7 @@ f(k\alpha+l\beta)=kf(\alpha)+lf(\beta)\in U,
 	
 	设 $U$ 和 $W$ 是域$F$上线性空间 $V$ 的子空间, 则
 	\[
-	(U+W)/U=W/(U\cap W).
+	(U+W)/U\cong W/(U\cap W).
 	\]
 	
 \end{newthem}
